@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Paper Downloads</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .table-container {
+            overflow-x: auto; /* Enable horizontal scrolling for small screens */
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        td a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            display: block; /* Make the entire cell clickable */
+        }
+
+        td a:hover {
+            color: #0056b3;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            th, td {
+                padding: 8px 10px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Research Paper for Summary</h1>
+    <h3 class="red">Note:</h3>
+    <ol>
+        <li>All Research Papers are assigned in the presence of you or your group member or assigned by sir Zaffar, I am not responsible for the any kind of the assignment of any research paper to any student!</li>
+        <li>Summary is assigned in Groups not Solo.</li>
+        <li>Sir Zaffar Said: "You should write the Summary on paper in your own wording!"</li>
+        <li>If your Group is not included in the List please contect to Mr.Aazan Arain (Vice CR)</li>
+    </ol>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Topic Name</th>
+                    <th>Student Name</th>
+                </tr>
+            </thead>
+            <tbody id="paperTableBody">
+            </tbody>
+        </table>
+    </div>
+    <script>
+        const papers = [
+            { topic: "Computer Vision Driven", student: "Aazan (Vice CR)" },
+            { topic: "The Design Space", student: "Absar" },
+            { topic: "State of Algorithm", student: "Anika" },
+            { topic: "Use of Human Computer Interaction", student: "Arqum" },
+            { topic: "Towards Designing", student: "Asad" },
+            { topic: "AI Persuading AI", student: "Balach" },
+            { topic: "Role of Digital Technologies", student: "Gulab" },
+            { topic: "Dynamic User Interface", student: "Hamza" },
+            { topic: "HCI A Systemic Review", student: "Israr" },
+            { topic: "How Human Centered", student: "Jethanand" },
+            { topic: "Robotic Vision for Human", student: "Kantaish" },
+            { topic: "AI Assistance for UX", student: "Minaam" },
+        ];
+
+        const tableBody = document.getElementById('paperTableBody');
+
+        papers.forEach(paper => {
+            const row = tableBody.insertRow();
+            const topicCell = row.insertCell();
+            const studentCell = row.insertCell();
+
+            const downloadLink = document.createElement('a');
+            downloadLink.href = `paper/${paper.topic}.pdf`;
+            downloadLink.textContent = paper.topic;
+            downloadLink.download = `${paper.topic}.pdf`;
+
+            topicCell.appendChild(downloadLink);
+            studentCell.textContent = paper.student;
+        });
+    </script>
+</body>
+</html>
